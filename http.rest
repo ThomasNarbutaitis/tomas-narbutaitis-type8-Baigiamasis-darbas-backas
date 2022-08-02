@@ -1,0 +1,80 @@
+// ====
+# GET http://localhost:3001/users
+###
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username": "marta21",
+  "email": "marta@bob.lt",
+  "password": "marta1"
+}
+###
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "username": "james200",
+  "password": "james1"
+}
+###
+// ======================================== Questions
+GET http://localhost:3001/questions
+###
+GET http://localhost:3001/questions/2
+###
+POST http://localhost:3001/questions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTEyMTE4NywiZXhwIjoxNjU5MTI4Mzg3fQ.7Z_ugliMn8x08YaLJjGwFJkH3aDHO3pDyleqabTvH2M
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "question": "How is it going with your course?"
+}
+###
+PATCH http://localhost:3001/questions/13
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTM1MTgxNSwiZXhwIjoxNjU5MzU5MDE1fQ.g818YPqKS4KeU_hiIKSerrqo4MYyLQ4iECXkfNJsGb8
+Content-Type: application/json
+
+{
+  "question": "Ar veikia questions update 13?"
+}
+###
+DELETE http://localhost:3001/questions/13
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTM1Mjk4MywiZXhwIjoxNjU5MzYwMTgzfQ.VRIlHdQTsVomLTDEMKUzhRMLak1ROb7eun8VREnv2N8
+Content-Type: application/json
+###
+# ================================================== ANSWERS
+
+GET http://localhost:3001/answersToQuestion/1
+###
+GET http://localhost:3001/answers/1
+###
+POST http://localhost:3001/answers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTM3NTc0OSwiZXhwIjoxNjU5MzgyOTQ5fQ.2XwwnSEKJN3G_wzNglTOhAufNm6bdu6vCPJU72JRdtg
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "question_id": 1,
+  "answer": "xxxxxxxxxxxxxxxxxx cccccccc"
+}
+###
+PATCH http://localhost:3001/answers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTM3NTc0OSwiZXhwIjoxNjU5MzgyOTQ5fQ.2XwwnSEKJN3G_wzNglTOhAufNm6bdu6vCPJU72JRdtg
+Content-Type: application/json
+
+{
+  "answer": "Sekasi neblogai, bet blogiau nei maniau. Bet ok"
+}
+###
+DELETE http://localhost:3001/answers/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTM3NTc0OSwiZXhwIjoxNjU5MzgyOTQ5fQ.2XwwnSEKJN3G_wzNglTOhAufNm6bdu6vCPJU72JRdtg
+Content-Type: application/json
+###
+DELETE http://localhost:3001/allAnswers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY1OTQ0MDA5NywiZXhwIjoxNjU5NDQ3Mjk3fQ.isANuy-OJagf5sx509VLNkAu-byoOVuAF7fpOjqemP8
+Content-Type: application/json
+###
+GET http://localhost:3001/answers
+###
